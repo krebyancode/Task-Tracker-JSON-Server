@@ -25,7 +25,8 @@ const AddTask = ({ addTask, editedTask, editable }) => {
     } else {
       addTask({ text, day, isDone: false });
     }
-
+    setEditDay(false);
+    setEditText(false);
     setText("");
     setDay("");
     // console.log(text);
