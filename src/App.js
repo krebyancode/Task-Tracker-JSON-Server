@@ -40,7 +40,7 @@ function App() {
     console.log(data);
     setEditable(true);
     setEditedTask(data);
-    deleteTask(taskId);
+    setShowAddTask(true);
   };
 
   //* ADD TASK
@@ -57,7 +57,12 @@ function App() {
 
   //* Add tasks
   const addTask = async (newTask) => {
-    await axios.post(baseUrl, newTask);
+    if (!editable) {
+      await axios.post(baseUrl, newTask);
+    } else {
+      await axios.put(`${baseUrl}/${editedTask.id}`, newTask);
+    }
+    setEditedTask({});
     setEditable(false);
     fetchTasks();
   };

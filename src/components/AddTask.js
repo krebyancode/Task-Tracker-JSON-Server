@@ -67,7 +67,11 @@ const AddTask = ({ addTask, editedTask, editable }) => {
           //   onChange={(e) => console.log(e.target.value)}
         />
       </div>
-      <input type="submit" value="Add Task" className="btn btn-block" />
+      <input
+        type="submit"
+        value={editable ? "Edit Task" : "Add Task"}
+        className="btn btn-block"
+      />
     </form>
   );
 };
