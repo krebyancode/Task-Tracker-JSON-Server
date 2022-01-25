@@ -12,7 +12,7 @@ function App() {
   const [editedTask, setEditedTask] = useState({});
   const [editable, setEditable] = useState(false);
 
-  const baseUrl = "http://localhost:5000/tasks";
+  const baseUrl = "https://task-tracker-backend-json.herokuapp.com/tasks";
 
   //* Create Read Update Delete
 
